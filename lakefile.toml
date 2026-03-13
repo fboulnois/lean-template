@@ -1,0 +1,23 @@
+name = "lean-template"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["main"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.28.0"
+
+[[lean_lib]]
+name = "lib"
+roots = ["Local"]
+
+[[lean_exe]]
+name = "main"
+root = "Main"
