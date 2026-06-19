@@ -16,13 +16,14 @@
 
 Strictly follow this sequence for new proofs:
 
-1. **Isolate:** Create a dedicated file in the `test/` directory. Include the exact `import` statements required by the target code.
-2. **Iterate:** Attempt the proof in this isolated file.
-3. **Divide & Conquer:** If stuck or if there are errors, immediately extract the problematic section into a separate test file and go to step 2.
-4. **Verify:**
+1. **Incremental Scope:** Advance strictly one small lemma or theorem at a time. Do not attempt monolithic proofs.
+2. **Isolate:** Create a dedicated file in the `test/` directory. Include the exact `import` statements required by the target code.
+3. **Iterate:** Attempt the proof in this isolated file. Follow the refactoring protocol below to optimize the proof.
+4. **Divide & Conquer:** If stuck or if there are errors, immediately extract the problematic section into a separate test file and go back to step 2.
+5. **Verify:**
     * Run `lake env lean <filename>`. The output MUST have **zero errors**.
     * Ensure no `sorry` or `admit` tactics remain.
-5. **Integrate:** Once verified, refactor and move the code into the main project source.
+6. **Integrate:** Once verified, move the code without changes into the main project source. You MUST verify that the project compiles using `lake build` after *every* step or modification.
 
 ## 4. Refactoring Protocol
 
