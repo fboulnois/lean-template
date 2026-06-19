@@ -1,1 +1,11 @@
+# lean build files
 .lake/
+
+# dependencies
+node_modules/
+
+# pnpm store
+.pnpm-store/
+
+# build output
+dist/
